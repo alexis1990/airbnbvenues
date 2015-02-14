@@ -199,11 +199,6 @@ header{
 	margin: 0;
 }
 
-#map {
-	width: 100%;
-	height: 300px;
-}
-
 .displayScoreGrade{
 	color: #e5b862;
 	text-align: center;

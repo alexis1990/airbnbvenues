@@ -1,0 +1,91 @@
+<?php echo View::instance()->render('partials/header.php'); ?>
+<script type="text/javascript">
+	// When the window has finished loading create our google map below
+	google.maps.event.addDomListener(window, 'load', init);
+
+	function init() {
+			// Basic options for a simple Google Map
+			// For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
+			var mapOptions = {
+					// How zoomed in you want the map to start at (always required)
+					zoom: 17,
+
+					// The latitude and longitude to center the map (always required)
+					center: new google.maps.LatLng(<?php echo $one->latitude;?>, <?php echo $one->longitude;?>),
+
+					// How you would like to style the map.
+					// This is where you would paste any style found on Snazzy Maps.
+					styles: [{"featureType":"landscape.man_made","elementType":"geometry","stylers":[{"color":"#f7f1df"}]},{"featureType":"landscape.natural","elementType":"geometry","stylers":[{"color":"#d0e3b4"}]},{"featureType":"landscape.natural.terrain","elementType":"geometry","stylers":[{"visibility":"off"}]},{"featureType":"poi","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"poi.business","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"poi.medical","elementType":"geometry","stylers":[{"color":"#fbd3da"}]},{"featureType":"poi.park","elementType":"geometry","stylers":[{"color":"#bde6ab"}]},{"featureType":"road","elementType":"geometry.stroke","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#ffe15f"}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#efd151"}]},{"featureType":"road.arterial","elementType":"geometry.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"road.local","elementType":"geometry.fill","stylers":[{"color":"black"}]},{"featureType":"transit.station.airport","elementType":"geometry.fill","stylers":[{"color":"#cfb2db"}]},{"featureType":"water","elementType":"geometry","stylers":[{"color":"#a2daf2"}]}]
+			};
+
+			// Get the HTML DOM element that will contain your map
+			// We are using a div with id="map" seen below in the <body>
+			var mapElement = document.getElementById('map');
+
+			// Create the Google Map using our element and options defined above
+			var map = new google.maps.Map(mapElement, mapOptions);
+
+			// Let's also add a marker while we're at it
+			var marker = new google.maps.Marker({
+					position: new google.maps.LatLng(<?php echo $one->latitude;?>, <?php echo $one->longitude;?>),
+					map: map,
+					title: <?php echo "'" . $one->name . "'";?>
+			});
+	}
+</script>
+
+
+<div class="globalAlign">
+	<div class="displayCover">
+		<form class="searchBar" method="post" action="#">
+			<input type="text" class="searchBarInput" placeholder="Rechercher un lieu"/>
+			<input type="submit" class="searchBarSubmit" value=""/>
+		</form>
+	</div>
+
+	<div class="displayLeftCol">
+		<h1 class="displayName"><?php echo $one->name;?></h1>
+		<span class="displaySubtitle"><?php echo $one->class_name;?></span>
+
+		<p class="displayDescription"><?php echo $one->description;?></p>
+
+		<div class="hashtagsList">
+			<a href="#" class="hashtags">branché</a>
+			<a href="#" class="hashtags">séminaires</a>
+			<a href="#" class="hashtags">conférences</a>
+			<a href="#" class="hashtags">authentique</a>
+			<a href="#" class="hashtags">chic</a>
+			<a href="#" class="hashtags">espagnol</a>
+			<a href="#" class="hashtags">pas cher</a>
+		</div>
+
+		<div id="map"></div>
+	</div>
+
+	<div class="displayRightCol">
+		<div class="displayBloc">
+			<h3 class="displayBlocTitle">Note</h3>
+			<span class="displayScoreGrade">
+				<span class="displayScoreGradeNominateur">4.8</span>
+				<span class="displayScoreGradeDenominateur">/5</span>
+			</span>
+			<span class="displayScoreTotal">sur 14 avis</span>
+		</div>
+
+		<div class="displayBloc">
+			<h3 class="displayBlocTitle">Photos</h3>
+			<a href="#" class="displayPictureFrame"><img src="http://localhost/image/venues_pictures/90x90/IMG_20140816_003605.jpg" class="displayPictureImage"/></a>
+		</div>
+
+		<div class="displayBloc">
+			<div class="displayPrice">
+				<span class="displayPriceBig">45</span>
+				<span class="displayPriceCurrency">€</span>
+			</div>
+
+			<a href="#" class="callToBook">Réserver</a>
+		</div>
+	</div>
+</div>
+
+<?php echo View::instance()->render('partials/footer.php'); ?>
