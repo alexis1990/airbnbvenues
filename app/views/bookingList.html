@@ -1,0 +1,45 @@
+<?php echo View::instance()->render('partials/header.php'); ?>
+
+<div class="globalAlign">
+	<h2 class="bookingTitle">Mes reservations</h2>
+
+	<div class="noBooking">
+		<span>Vous n'avez pas encore de réservation</span>
+		<a class="bigButton noBookingButton" href="#">Réserver maintenant</a>
+	</div>
+
+	<h2 class="bookingTitle">Historique</h2>
+
+	<div class="bookingRow">
+		<div class="bookingPicture"></div>
+		<div class="bookingRightSide">
+			<div class="rowTopBloc">
+				<div class="rowTitleBloc">
+					<a href="/venue/0">
+					<span class="rowVenueName">TheFamily</span>
+					<span class="rowVenueAdress">25 rue du Petit Musc, 75004 Paris</span>
+					</a>
+				</div>
+
+				<div class="rowDetailsBloc">
+					<div class="rowDateBloc">
+						<span class="rowDay">Mardi</span>
+						<span class="rowDate">23 MAR</span>
+					</div>
+
+					<div class="rowInfosBloc">
+						<span class="rowInfos">Conférence sur le Growth Hacking</span>
+						<span class="rowCapacity">40 - 50 personnes</span>
+					</div>
+				</div>
+			</div>
+
+			<div class="rowBottomBloc">
+				<a href="#" class="rowButton contactButton">Contacter</a>
+				<a href="#" class="rowButton cancelButton">Annuler</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+<?php echo View::instance()->render('partials/footer.php'); ?>

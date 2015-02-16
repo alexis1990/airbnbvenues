@@ -1,12 +1,48 @@
 <?php echo View::instance()->render('partials/header.php'); ?>
 
 <div class="globalAlign">
-	<div class="displayCover">
+	<div class="displayCover homeCover">
+		<h1 class="homeBaseline">Privatisez le meilleur</h1>
+		<span class="homeSubtitle">Trouvez l’endroit parfait pour tout vos évenements</span>
 		<form class="searchBar" method="post" action="#">
 			<input type="text" class="searchBarInput" placeholder="Rechercher un lieu"/>
 			<input type="submit" class="searchBarSubmit" value=""/>
 		</form>
 	</div>
+
+	<div class="homePresentationBloc">
+		<div class="homePresentation fast-icon">
+			<span>Ne perdez plus de temps à chercher, contacter des numéros qui ne répondent pas, tourner en rond sans trouver le lieu idéal.</span>
+		</div>
+
+		<div class="homePresentation thumb-icon">
+			<span>Des lieux d'exception sélectionnés avec soin par nos équipes pour vous garantir le meilleur. Ne cherchez plus, les meilleurs lieux à privatiser sont ici.</span>
+		</div>
+
+		<div class="homePresentation chat-icon">
+			<span>Rentrer directement en contact avec les responsables d'un établissement pour que leur prestations correspondent exactement à vos envies.</span>
+		</div>
+	</div>
+
+	<h2 class="homeSelectionTitle">Selection du mois</h2>
+	<span class="homeSelectionSubtitle">Découvrez les meilleurs lieux du mois pour organiser vos évenements</span>
+
+	<div class="homeSelectionBloc">
+		<a class="homeSelection" href="#">
+			<span class="homeSelectionVenueName">TheFamily</span>
+		</a>
+
+		<a class="homeSelection" href="#">
+			<span class="homeSelectionVenueName">TheFamily</span>
+		</a>
+
+		<a class="homeSelection" href="#">
+			<span class="homeSelectionVenueName">TheFamily</span>
+		</a>
+	</div>
+
+	<a class="bigButton homeSignup" href="#">Trouvez le lieu idéal</a>
 </div>
+
 
 <?php echo View::instance()->render('partials/footer.php'); ?>
