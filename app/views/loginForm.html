@@ -1,0 +1,19 @@
+<?php echo View::instance()->render('partials/header.php'); ?>
+
+<div class="globalAlign">
+	<div class="signup_form_bloc">
+		<h1 class="homeSelectionTitle">Connexion</h1>
+		<a href="login" class="loginLink">Je n'ai pas de compte ? S'inscrire</a>
+		<div class="formError">
+			<span><?php if(isset($formError)){echo $formError;}?></span>
+		</div>
+		<form action="/login" method="POST" class="signup_form">
+			<input type="text" placeholder="Email" name="email" class="signup_email"/>
+			<input type="password" placeholder="Mot de passe" name="password" class="signup_password"/>
+
+			<input type="submit" value="Connexion" class="signup_submit bigButton"/>
+		</form>
+	</div>
+</div>
+
+<?php echo View::instance()->render('partials/footer.php'); ?>

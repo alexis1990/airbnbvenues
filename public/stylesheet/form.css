@@ -1,0 +1,96 @@
+.headerSignup{
+	float: right;
+}
+
+a.signupButton{
+	background: #40B160;
+	height: 40px;
+	color: white;
+	line-height: 40px;
+	margin-top: 14px;
+	border-radius: 2px;
+	width: 120px;
+	text-align: center;
+	float: left;
+	padding: 0px 10px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+a.loginButton{
+	background: #494646;
+	height: 40px;
+	color: #939393;
+	line-height: 40px;
+	margin-top: 14px;
+	border-radius: 2px;
+	width: 120px;
+	text-align: center;
+	float: left;
+	padding: 0px 10px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.signup_submit{
+	outline: none;
+	border: none;
+	cursor: pointer;
+	width: 100%;
+	margin-top: 20px;
+}
+
+.signupCover{
+	background-image: url('cover-shadow.png'), url('home-cover.png');
+	height: 220px;
+}
+
+.signup_form_bloc{
+	width: 340px;
+	margin: auto;
+}
+
+.signup_form input[type=text], .signup_form input[type=password]{
+	outline: none;
+	border-radius: 0.3125em;
+	border: 1px solid #D0D1D5;
+	padding: 10px;
+	text-align: left;
+	border-color: #D0D2D6;
+	background-color: #fff;
+
+	margin-top: 5px;
+	margin-bottom: 5px;
+	box-sizing: border-box;
+}
+
+.signup_first_name{
+	width: 49%;
+	float: left;
+}
+
+.signup_last_name{
+	width: 49%;
+	float: right;
+}
+
+.signup_email, .signup_password{
+	width: 100%;
+}
+
+.formError{
+	text-align: center;
+	margin: 10px;
+	color: #D22929;
+	font-weight: 500;
+	font-size: 13px;
+}
+
+.loginLink{
+	display: inline-block;
+	margin-bottom: 10px;
+	color: rgb(17, 115, 44);
+	text-decoration: underline;
+	text-align: center;
+	width: 100%;
+}

@@ -14,12 +14,78 @@ class app_model{
 
 	public function getVenue($params){
 		//$combined=new DB\SQL\Mapper($db,'combined');
-	 // $combined->load(array('id=?',$params['id']));
+		// $combined->load(array('id=?',$params['id']));
 		return $this->getMapper('venue_datas')->load(array('id=?',$params['id']));
 		//return $this->getMapper()->load(array('id=?',$params['id']));
 	}
 
-	public function renderMenu($activeMenu){
+	public function signup($f3){
+		if($this->loadAccount($f3->get('POST.email')) < 1){
+			if(isset($_POST['first_name']) && isset($_POST['last_name']) && isset($_POST['email']) && isset($_POST['password'])){
+				$register_first_name = $_POST['first_name'];
+				$register_last_name = $_POST['last_name'];
+				$register_email = $_POST['email'];
+				$register_password = $this->hash_password($_POST['password']);
+
+				$account = new \DB\SQL\Mapper($this->dB,'accounts');
+				$account->first_name = $register_first_name;
+				$account->last_name = $register_last_name;
+				$account->email = $register_email;
+				$account->password = $register_password;
+
+				$account->save();
+			}
+		}
+		else{
+			$f3->set('formError', 'Cette adresse email est déjà utilisée');
+		}
+	}
+
+	public function login($f3){
+		$email = $f3->get('POST.email');
+		$password = $f3->get('POST.password');
+
+		$account = new \DB\SQL\Mapper($this->dB,'accounts');
+		$account->load(array('email = ?', $email));
+
+		if($account->loaded() == 1){
+			if($this->hash_password($password) == $account->password){
+				$_SESSION['logged_mail'] = $account->email;
+				return true;
+			}
+			else{
+				return false;
+			}
+		}
+		else{
+			return false;
+		}
+	}
+
+	public function is_logged(){
+		if(isset($_SESSION['logged_mail'])){
+			return true;
+		}
+		else{
+			return false;
+		}
+	}
+
+	public function logout(){
+		session_destroy();
+	}
+
+	function loadAccount($email){
+		$account = new \DB\SQL\Mapper($this->dB,'accounts');
+		$account->load(array('email = ?', $email));
+		return $account->loaded();
+	}
+
+	private function hash_password($password_to_hash){
+		return sha1('ekçflk_d_l_45°2fke-q%!(kjeklkd' . $password_to_hash . 'ii+iial1ù$*_____=');
+	}
+
+		public function renderMenu($activeMenu){
 		$menu = '<ul class="headerMenu">';
 
 		if($activeMenu == 1)
@@ -35,6 +101,18 @@ class app_model{
 		else{ $menu .= '<li><a href="/search">Recherche avancée</a></li>'; }
 
 		return $menu;
+	}
+
+	public function renderProfile($is_logged){
+
+		if($is_logged){
+			$profile = '<div class="headerMenu headerProfile"><a href="#" class="menuProfile"><span class="headerProfileName">Arthur</span><span class="headerProfilePic"></span><span class="profile_notifs">3</span></a></div>';
+		}
+		else{
+			$profile = '<div class="headerSignup"><a href="/signup" class="signupButton">Inscription</a><a href="/login" class="loginButton">Connexion</a></div>';
+		}
+
+		return $profile;
 	}
 
 	private function getMapper($table='venues'){

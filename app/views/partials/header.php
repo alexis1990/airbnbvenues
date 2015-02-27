@@ -8,6 +8,7 @@
 		<link rel="stylesheet" href="/public/stylesheet/style.css">
 		<link rel="stylesheet" href="/public/stylesheet/home.css">
 		<link rel="stylesheet" href="/public/stylesheet/booking.css">
+		<link rel="stylesheet" href="/public/stylesheet/form.css">
 
 		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDaz-DUqja-r1rHgXJRTDBwK7JYkYuSkYc&sensor=false"></script>
 
@@ -18,18 +19,19 @@
 		<header>
 			<div class="globalAlign" style="position: relative;">
 				<?php echo html_entity_decode($menu); ?>
-
-				<div class="headerMenu headerProfile">
-					<a href="#" class="menuProfile">
-						<span class="headerProfileName">Arthur</span>
-						<span class="headerProfilePic"></span>
-					</a>
-				</div>
+				<?php echo html_entity_decode($profile); ?>
 
 				<div class="headerProfileList">
-					<a href="#" class="settingsIcon">Préférences</a>
-					<a href="#" class="giftIcon">Inviter</a>
-					<a href="#" class="logoutIcon">Déconnexion</a>
+					<a href="/settings" class="settingsIcon">Préférences</a>
+					<a href="/invit" class="giftIcon">Inviter</a>
+					<a href="/logout" class="logoutIcon">Déconnexion</a>
 				</div>
 			</div>
 		</header>
+
+		<?php if(isset($message) && $message != ""){
+			?>
+				<div class="message"><div class="messageCenter"><?php echo $message;?></div></div>
+			<?php
+		}
+		?>

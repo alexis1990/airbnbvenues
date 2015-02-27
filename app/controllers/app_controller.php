@@ -11,9 +11,12 @@ class app_controller{
 	private $pageTitle;
 
 	function __construct(){
+		session_start();
 		$this->tpl='main.html';
 		$this->model=new \APP\MODELS\app_model();
 		$this->activeMenu = 1;
+		$this->message = "";
+		$this->logged = $this->model->is_logged();
 	}
 
 	function home(){
@@ -47,12 +50,45 @@ class app_controller{
 		$this->tpl = 'advancedSearch.html';
 	}
 
+
+	// Forms
+
+	function loginForm($f3){
+		$this->pageTitle = 'Connexion';
+		$this->tpl = 'loginForm.html';
+	}
+
+	function loginSubmit($f3){
+		$this->pageTitle = 'Connexion';
+		$this->logged = $this->model->login($f3);
+
+	}
+
+	function signupForm($f3){
+		$this->pageTitle = 'Inscription';
+		$this->tpl = 'signupForm.html';
+	}
+
+	function signupSubmit($f3){
+		$this->pageTitle = 'Inscription';
+		$this->model->signup($f3);
+		$this->tpl = 'signupForm.html';
+	}
+
+	function logout(){
+		$this->model->logout();
+		$this->logged = false;
+		$this->message = "Vous êtes déconnecté";
+	}
+
+
+	// afterroute
+
 	function afterroute($f3){
-		//echo View::instance()->render($this->tpl);
-		//$template=new Template;
-		//echo Template::instance()->render('main.html');
 		$f3->set('pageTitle', $this->pageTitle);
+		$f3->set('message', $this->message);
 		$f3->set('menu', $this->model->renderMenu($this->activeMenu));
+		$f3->set('profile', $this->model->renderProfile($this->logged));
 		echo \View::instance()->render($this->tpl);
 	}
 

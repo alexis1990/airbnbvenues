@@ -6,3 +6,7 @@ $('.menuProfile').click(function(){
 $(document).click(function(){
 	$('.headerProfileList').removeClass('headerProfileListActive');
 });
+
+$('.profile_notifs').click(function(){
+	document.location.href = "/notifications";
+});
