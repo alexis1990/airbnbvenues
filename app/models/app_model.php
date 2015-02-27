@@ -19,7 +19,6 @@ class app_model{
 		//return $this->getMapper()->load(array('id=?',$params['id']));
 	}
 
-<<<<<<< HEAD
 	public function signup($f3){
 		if($this->loadAccount($f3->get('POST.email')) < 1){
 			if(isset($_POST['first_name']) && isset($_POST['last_name']) && isset($_POST['email']) && isset($_POST['password'])){
@@ -87,7 +86,7 @@ class app_model{
 	}
 
 		public function renderMenu($activeMenu){
-=======
+
 	public function getVenues($data){
 
 		$query=array(
@@ -98,7 +97,6 @@ class app_model{
 	}
 
 	public function renderMenu($activeMenu){
->>>>>>> master
 		$menu = '<ul class="headerMenu">';
 
 		if($activeMenu == 1)
@@ -117,7 +115,6 @@ class app_model{
 	}
 
 	public function renderProfile($is_logged){
-
 		if($is_logged){
 			$profile = '<div class="headerMenu headerProfile"><a href="#" class="menuProfile"><span class="headerProfileName">Arthur</span><span class="headerProfilePic"></span><span class="profile_notifs">3</span></a></div>';
 		}
