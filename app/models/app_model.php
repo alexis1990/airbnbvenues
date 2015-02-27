@@ -85,8 +85,6 @@ class app_model{
 		return sha1('ekçflk_d_l_45°2fke-q%!(kjeklkd' . $password_to_hash . 'ii+iial1ù$*_____=');
 	}
 
-		public function renderMenu($activeMenu){
-
 	public function getVenues($data){
 
 		$query=array(
