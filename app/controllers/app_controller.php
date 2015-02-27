@@ -50,6 +50,7 @@ class app_controller{
 		$this->tpl = 'advancedSearch.html';
 	}
 
+<<<<<<< HEAD
 
 	// Forms
 
@@ -84,6 +85,14 @@ class app_controller{
 
 	// afterroute
 
+=======
+	function search($f3){
+		$this->pageTitle = 'Recherche';
+		$f3->set('data',$this->model->getVenues($f3->get('POST.name')));
+		$this->tpl = 'search.html';
+	}
+
+>>>>>>> master
 	function afterroute($f3){
 		$f3->set('pageTitle', $this->pageTitle);
 		$f3->set('message', $this->message);

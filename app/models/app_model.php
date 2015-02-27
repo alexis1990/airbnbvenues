@@ -9,7 +9,7 @@ class app_model{
 	function __construct(){
 		$f3=\Base::instance();
 		$this->dB=new \DB\SQL('mysql:host='.$f3->get('db_host').';port='.$f3->get('db_port').';dbname='.$f3->get('db_name'),
-		$f3->get('db_login'),$f3->get('db_password'));
+			$f3->get('db_login'),$f3->get('db_password'));
 	}
 
 	public function getVenue($params){
@@ -19,6 +19,7 @@ class app_model{
 		//return $this->getMapper()->load(array('id=?',$params['id']));
 	}
 
+<<<<<<< HEAD
 	public function signup($f3){
 		if($this->loadAccount($f3->get('POST.email')) < 1){
 			if(isset($_POST['first_name']) && isset($_POST['last_name']) && isset($_POST['email']) && isset($_POST['password'])){
@@ -86,18 +87,30 @@ class app_model{
 	}
 
 		public function renderMenu($activeMenu){
+=======
+	public function getVenues($data){
+
+		$query=array(
+			'name LIKE :name1',
+			':name1'=>'%'.$data.'%'
+			);
+		return $this->getMapper()->find($query,array('order'=>'name'));
+	}
+
+	public function renderMenu($activeMenu){
+>>>>>>> master
 		$menu = '<ul class="headerMenu">';
 
 		if($activeMenu == 1)
-		{ $menu .= '<li class="activeHeaderLink"><a href="/">Lieux</a></li>'; }
+			{ $menu .= '<li class="activeHeaderLink"><a href="/">Lieux</a></li>'; }
 		else{ $menu .= '<li><a href="/">Lieux</a></li>'; }
 
 		if($activeMenu == 2)
-		{ $menu .= '<li class="activeHeaderLink"><a href="/booking">Mes réservations</a></li>'; }
+			{ $menu .= '<li class="activeHeaderLink"><a href="/booking">Mes réservations</a></li>'; }
 		else{ $menu .= '<li><a href="/booking">Mes réservations</a></li>'; }
 
 		if($activeMenu == 3)
-		{ $menu .= '<li class="activeHeaderLink"><a href="/search">Recherche avancée</a></li>'; }
+			{ $menu .= '<li class="activeHeaderLink"><a href="/search">Recherche avancée</a></li>'; }
 		else{ $menu .= '<li><a href="/search">Recherche avancée</a></li>'; }
 
 		return $menu;
