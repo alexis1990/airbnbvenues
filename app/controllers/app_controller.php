@@ -47,6 +47,12 @@ class app_controller{
 		$this->tpl = 'advancedSearch.html';
 	}
 
+	function search($f3){
+		$this->pageTitle = 'Recherche';
+		$f3->set('data',$this->model->getVenues($f3->get('POST.name')));
+		$this->tpl = 'search.html';
+	}
+
 	function afterroute($f3){
 		//echo View::instance()->render($this->tpl);
 		//$template=new Template;
