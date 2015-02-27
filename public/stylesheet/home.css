@@ -103,3 +103,39 @@
 .homeSignup{
 	margin-top: 270px;
 }
+
+.profile_notifs{
+	position: absolute;
+	right: 57px;
+	border-radius: 30px;
+	background: #40B260;
+	display: inline-block;
+	height: 30px;
+	width: 30px;
+	top: 18px;
+	padding: 0;
+	margin: 0;
+	line-height: 34px;
+	text-align: center;
+	color: white;
+	font-weight: 100;
+	font-family: sans-serif;
+}
+
+.message{
+	position: absolute;
+	width: 100%;
+	top: 90px;
+	z-index: 4;
+}
+
+.messageCenter{
+	background: #40B260;
+	width: 670px;
+	margin: auto;
+	color: white;
+	height: 40px;
+	text-align: center;
+	line-height: 40px;
+	border-radius: 4px;
+}
