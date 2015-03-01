@@ -85,8 +85,10 @@ class app_controller{
 	// afterroute
 
 	function search($f3){
+		// $f3->set('data',$this->model->getVenues($f3->get('POST.name')));
+
 		$this->pageTitle = 'Recherche';
-		$f3->set('data',$this->model->getVenues($f3->get('POST.name')));
+		$f3->set('result', $this->dataset = $this->model->getVenues($f3->get('POST.search')));
 		$this->tpl = 'search.html';
 	}
 

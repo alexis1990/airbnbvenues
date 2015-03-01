@@ -1,10 +1,43 @@
 <?php echo View::instance()->render('partials/header.php'); ?>
 
-Search page
 <?php 
-if(isset($data)){
+if(isset($result)):
+	foreach ($result as $data):
+		?>
 
-	print_r($data);
-}
-?>
-<?php echo View::instance()->render('partials/footer.php'); ?>
+	<div class="bookingRow">
+		<div class="bookingPicture"></div>
+		<div class="bookingRightSide">
+			<div class="rowTopBloc">
+				<div class="rowTitleBloc">
+					<a href="/venue/0">
+						<span class="rowVenueName"><?php echo $data->name ?></span>
+						<span class="rowVenueAdress">25 rue du Petit Musc, 75004 Paris</span>
+					</a>
+				</div>
+
+				<div class="rowDetailsBloc">
+					<div class="rowDateBloc">
+						<span class="rowDay">Mardi</span>
+						<span class="rowDate">23 MAR</span>
+					</div>
+
+					<div class="rowInfosBloc">
+						<span class="rowInfos"><?php echo $data->description ?></span>
+						<span class="rowCapacity"><?php echo $data->capacity ?></span>
+					</div>
+				</div>
+			</div>
+
+			<div class="rowBottomBloc">
+				<a href="#" class="rowButton contactButton">Contacter</a>
+				<a href="#" class="rowButton cancelButton">Annuler</a>
+			</div>
+		</div>
+	</div>
+
+	<?php 
+	endforeach;
+	endif;
+	?>
+	<?php echo View::instance()->render('partials/footer.php'); ?>
