@@ -82,16 +82,18 @@ class app_controller{
 	}
 
 
-	// afterroute
-
+	// Search bar home
 	function search($f3){
-		// $f3->set('data',$this->model->getVenues($f3->get('POST.name')));
-
-		$this->pageTitle = 'Recherche';
-		$f3->set('result', $this->dataset = $this->model->getVenues($f3->get('POST.search')));
-		$this->tpl = 'search.html';
+		// If post request is not empty
+		if($f3->get('POST.search') != ''){
+			$this->pageTitle = 'Recherche';
+			$f3->set('result', $this->dataset = $this->model->getVenues($f3->get('POST.search')));
+			$this->tpl = 'search.html';
+		}
+		
 	}
 
+	// afterroute
 	function afterroute($f3){
 		$f3->set('pageTitle', $this->pageTitle);
 		$f3->set('message', $this->message);

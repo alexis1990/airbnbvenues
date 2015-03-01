@@ -87,18 +87,6 @@ class app_model{
 
 	public function getVenues($data){
 
-		// $this->$dB->exec(
-		// 	'SELECT * FROM venues WHERE name=?',
-		// 	$f3->get('POST.name')
-		// 	);
-
-		// $query=array(
-		// 	'name LIKE :name1',
-		// 	':name1'=>'%'.$data.'%'
-		// 	);
-		// return $this->getMapper()->find($query,array('order'=>'name'));
-
-		// $result = $this->dB->exec('SELECT * FROM venues LIKE name="'.$data.'"');
 		$query=array(
 			'name LIKE :name1',
 			':name1'=>'%'.$data.'%'
