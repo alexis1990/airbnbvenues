@@ -1,0 +1,163 @@
+.filter{
+	height: 300px;
+	width: 100%;
+	background: rgb(180,180,180);
+	margin-bottom: 30px;
+}
+
+.filter div{
+	display: inline-block;
+	float: left;
+	margin-top: 0px;
+}
+
+.bloc_select{
+	width: 350px;
+	height: 300px;
+	padding-left: 30px;
+	padding-top: 15px;
+}
+
+.bloc_arrondissement{
+	width: 300px;
+	height: 300px;
+}
+
+.bloc_map{
+	width: 400px;
+	height: 300px;
+}
+
+.bloc_map #parisMap{
+	-webkit-transform : scale(0.3);
+	width: 100px;
+	height: 100px;
+}
+
+.bloc_map div button{
+	height: 20px;
+	background-color: white;
+	margin-left: 0px;
+	display: inline-block;
+	float: left;
+	border:1px solid rgb(150,150,150);
+	color: rgb(150,150,150);
+}
+
+.bloc_map div button:first-child{
+	border-radius: 5px 0px 0px 5px;
+}
+
+.bloc_map div button:last-child{
+	border-radius: 0px 5px 5px 0px;
+}
+
+.bloc_arrondissement div{
+	width: 150px;
+	height: 200px;
+	background-color: white;
+	border:1px solid rgb(150,150,150);
+	border-radius: 5px 5px 5px 5px;
+	margin-left: 80px;
+	margin-top: 80px;
+}
+
+.bloc_arrondissement div .text_arrondissement{
+	margin-top: 0px;
+	margin-left: 0px;
+	height: 30px;
+	text-align: center;
+	border-radius: 5px 5px 0px 0px;
+	background-color: rgb(120,120,120);
+	color: white;
+	line-height: 30px;
+}
+
+.bloc_arrondissement div ul{
+	display: block;
+	list-style: none;
+	float: left;
+	padding-left: 8px;
+	margin-top: 8px;
+}
+
+.bloc_arrondissement div ul li{
+	list-style: none;
+	display: inline-block;
+	width: 30px;
+	height: auto;
+	color: white;
+	background-color: rgb(64,178,96);
+	text-align: center;
+	border-radius: 5px 5px 5px 5px;
+
+}
+
+.bloc_select .bloc_arrondissement{
+	display: inline-block;
+	float: left;
+}
+
+.bloc_select h1{
+	font-size: 18px;
+	color: rgb(64,178,96);
+	margin-bottom:30px;
+}
+
+.bloc_select ul {
+	list-style: none;
+	padding-left: 0px;
+}
+
+.bloc_select ul li .text_bloc {
+	float: left;
+	width: 50px;
+	height: 30px;
+	line-height: 30px;
+}
+
+.bloc_select ul li .select_bloc {
+	float: left;
+	width: 250px;
+	height: 30px;
+	margin-bottom: 20px;
+	line-height: 30px;
+}
+
+.bloc_select .text_bloc .select_bloc{
+	float: left;
+	display: inline-block;
+}
+
+.text_bloc{
+	background-color: rgb(120,120,120);
+	text-align: center;
+	border-radius: 5px 0px 0px 5px;
+	color: white;
+	border:1px solid rgb(150,150,150);
+	font-size: 12px;
+}
+
+.select_bloc{
+	background-color: rgb(250,250,250);
+	text-align: center;
+	border-radius: 0px 5px 5px 0px;
+	color: white;
+	border:1px solid rgb(150,150,150);
+}
+
+.select_bloc span{
+	color: rgb(80,80,80);
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.bloc_checkbox{
+	width: 300px;
+}
+
+.bloc_checkbox li{
+	display: inline-block;
+	font-size: 12px;
+	margin-right: 4px;
+}

@@ -124,6 +124,11 @@ class app_model{
 		return $profile;
 	}
 
+	public function getAll(){
+		$result = $this->dB->exec('SELECT * FROM venues');
+		return $result;
+	}
+
 	private function getMapper($table='venues'){
 		return new \DB\SQL\Mapper($this->dB,$table);
 	}

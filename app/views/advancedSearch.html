@@ -1,9 +1,121 @@
 <?php echo View::instance()->render('partials/header.php'); ?>
 
 <div class="globalAlign">
-	<div id="parisMap">
-
+	<div class="filter">
+		<div class="bloc_select">
+			<h1>RECHERCHE AVANCEE :</h1>
+			<ul>
+				<li>
+					<span class="text_bloc">Prix</span>
+					<span class="select_bloc">
+						<select name="select" >
+						  <option value="value1" selected>min</option> 
+						  <option value="value2">Valeur 2</option>
+						  <option value="value3">Valeur 3</option>
+						</select>
+						<span>à</span>
+						<select name="select">
+						  <option value="value1" selected>max</option> 
+						  <option value="value2">Valeur 2</option>
+						  <option value="value3">Valeur 3</option>
+						</select>
+					</span>
+				</li>
+				<li>
+					<span class="text_bloc"> Surface </span>
+					<span class="select_bloc">
+						<select name="select" >
+						  <option value="value1" selected>min</option> 
+						  <option value="value2">Valeur 2</option>
+						  <option value="value3">Valeur 3</option>
+						</select>
+						<span>à</span>
+						<select name="select">
+						  <option value="value1" selected>max</option> 
+						  <option value="value2">Valeur 2</option>
+						  <option value="value3">Valeur 3</option>
+						</select>
+					</span>
+				</li>
+				<li>
+					<span class="text_bloc"> Invités </span>
+					<span class="select_bloc">
+						<select name="select">
+						  <option value="value1" selected>max</option> 
+						  <option value="value2">Valeur 2</option>
+						  <option value="value3">Valeur 3</option>
+						</select>
+					</span>
+				</li>
+			</ul>
+			<ul class="bloc_checkbox">
+				<li><input type="checkbox" name="checkbox" value="checkbox">Wifi</li>
+				<li><input type="checkbox" name="checkbox" value="checkbox">Sono</li>
+				<li><input type="checkbox" name="checkbox" value="checkbox">Dancefloor</li>
+				<li><input type="checkbox" name="checkbox" value="checkbox">Bar</li>
+				<li><input type="checkbox" name="checkbox" value="checkbox">Cuisine</li>
+			</ul>
+		</div>
+		<div class="bloc_arrondissement">
+			<div>
+				<div class="text_arrondissement">Arrondissements</div>
+				<ul>
+					<li>IIé</li>
+					<li>IIIé</li>
+					<li>IVé</li>
+				</ul>
+			</div>
+		</div>
+		<div class="bloc_map">
+			<div id="parisMap">
+			</div>
+			<div>
+				<button>Tout Sélectionner</button>
+				<button>Tout Désélectionner</button>
+			</div>
+		</div>
 	</div>
+
+	<?php 
+	if(isset($result)):
+	foreach ($result as $data):
+	?>
+
+	<div class="bookingRow">
+		<div class="bookingPicture"></div>
+		<div class="bookingRightSide">
+			<div class="rowTopBloc">
+				<div class="rowTitleBloc">
+					<a href="/venue/0">
+						<span class="rowVenueName"><?php echo $data["name"] ?></span>
+						<span class="rowVenueAdress">25 rue du Petit Musc, 75004 Paris</span>
+					</a>
+				</div>
+
+				<div class="rowDetailsBloc">
+					<div class="rowDateBloc">
+						<span class="rowDay">Mardi</span>
+						<span class="rowDate">23 MAR</span>
+					</div>
+
+					<div class="rowInfosBloc">
+						<span class="rowInfos"><?php echo $data["description"] ?></span>
+						<span class="rowCapacity"><?php echo $data["capacity"] ?></span>
+					</div>
+				</div>
+			</div>
+
+			<div class="rowBottomBloc">
+				<a href="#" class="rowButton contactButton">Contacter</a>
+				<a href="#" class="rowButton cancelButton">Annuler</a>
+			</div>
+		</div>
+	</div>
+
+	<?php 
+	endforeach;
+	endif;
+	?>
 </div>
 
 <?php echo View::instance()->render('partials/footer.php'); ?>

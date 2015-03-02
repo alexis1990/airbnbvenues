@@ -47,6 +47,8 @@ class app_controller{
 	function advancedSearch($f3){
 		$this->pageTitle = 'Recherche avancée';
 		$this->activeMenu = 3;
+		$this->dataset = $this->model->getAll();
+		$f3->set('result', $this->dataset);
 		$this->tpl = 'advancedSearch.html';
 	}
 

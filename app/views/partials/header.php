@@ -9,6 +9,7 @@
 		<link rel="stylesheet" href="/public/stylesheet/home.css">
 		<link rel="stylesheet" href="/public/stylesheet/booking.css">
 		<link rel="stylesheet" href="/public/stylesheet/form.css">
+		<link rel="stylesheet" href="/public/stylesheet/advancedSearch.css">
 
 	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDaz-DUqja-r1rHgXJRTDBwK7JYkYuSkYc&sensor=false"></script>
 
