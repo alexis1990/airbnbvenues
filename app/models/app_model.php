@@ -62,6 +62,15 @@ class app_model{
 		}
 	}
 
+	public function select_value(){
+		$selectOption = $_POST['select'];
+		var_dump($selectOption);
+		if($selectOption== 0){
+			$result = $this->dB->exec('SELECT * FROM venues WHERE price');
+			return $result;
+		}
+	}
+
 	public function is_logged(){
 		if(isset($_SESSION['logged_mail'])){
 			return true;

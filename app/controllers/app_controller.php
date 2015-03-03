@@ -52,6 +52,13 @@ class app_controller{
 		$this->tpl = 'advancedSearch.html';
 	}
 
+	function select_value($f3){
+		$this->activeMenu = 2;
+		$this->dataset = $this->model->select_value();
+		$f3->set('result', $this->dataset);
+		$this->tpl = 'advancedSearch.html';
+	}
+
 
 	// Forms
 

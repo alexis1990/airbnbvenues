@@ -32,7 +32,6 @@
 	-webkit-transform : scale(0.3);
 	width: 100px;
 	height: 100px;
-	margin-top: -30px;
 }
 
 .bloc_map div button{
@@ -43,7 +42,7 @@
 	float: left;
 	border:1px solid rgb(150,150,150);
 	color: rgb(150,150,150);
-	margin-top: 260px;
+	margin-top: 10px;
 	cursor: pointer;
 }
 

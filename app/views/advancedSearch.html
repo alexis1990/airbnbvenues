@@ -1,80 +1,87 @@
 <?php echo View::instance()->render('partials/header.php'); ?>
 
 <div class="globalAlign">
-	<div class="filter">
-		<div class="bloc_select">
-			<h1>RECHERCHE AVANCEE :</h1>
-			<ul>
-				<li>
-					<span class="text_bloc">Prix</span>
-					<span class="select_bloc">
-						<select name="select" >
-						  <option value="value1" selected>min</option> 
-						  <option value="value2">Valeur 2</option>
-						  <option value="value3">Valeur 3</option>
-						</select>
-						<span>à</span>
-						<select name="select">
-						  <option value="value1" selected>max</option> 
-						  <option value="value2">Valeur 2</option>
-						  <option value="value3">Valeur 3</option>
-						</select>
-					</span>
-				</li>
-				<li>
-					<span class="text_bloc"> Surface </span>
-					<span class="select_bloc">
-						<select name="select" >
-						  <option value="value1" selected>min</option> 
-						  <option value="value2">Valeur 2</option>
-						  <option value="value3">Valeur 3</option>
-						</select>
-						<span>à</span>
-						<select name="select">
-						  <option value="value1" selected>max</option> 
-						  <option value="value2">Valeur 2</option>
-						  <option value="value3">Valeur 3</option>
-						</select>
-					</span>
-				</li>
-				<li>
-					<span class="text_bloc"> Invités </span>
-					<span class="select_bloc">
-						<select name="select">
-						  <option value="value1" selected>max</option> 
-						  <option value="value2">Valeur 2</option>
-						  <option value="value3">Valeur 3</option>
-						</select>
-					</span>
-				</li>
-			</ul>
-			<ul class="bloc_checkbox">
-				<li><input type="checkbox" name="checkbox" value="checkbox">Wifi</li>
-				<li><input type="checkbox" name="checkbox" value="checkbox">Sono</li>
-				<li><input type="checkbox" name="checkbox" value="checkbox">Dancefloor</li>
-				<li><input type="checkbox" name="checkbox" value="checkbox">Bar</li>
-				<li><input type="checkbox" name="checkbox" value="checkbox">Cuisine</li>
-			</ul>
-		</div>
-		<div class="bloc_arrondissement">
-			<div>
-				<div class="text_arrondissement">Arrondissements</div>
+	<form method="post" action="/select_value">
+		<div class="filter">
+			<div class="bloc_select">
+				<h1>RECHERCHE AVANCEE :</h1>
 				<ul>
-					<li>IIé</li>
-					<li>IIIé</li>
-					<li>IVé</li>
+					<li>
+						<span class="text_bloc">Prix</span>
+						<span class="select_bloc">
+							<select name="select" > 
+							  <option value="0">0</option>
+							  <option value="50">50</option>
+							  <option value="100">100</option>
+							  <option value="100">150</option>
+							  <option value="100">200</option>
+							</select>
+							<span>à</span>
+							<select>
+							  <option value="50">50</option>
+							  <option value="100">100</option>
+							  <option value="150">150</option>
+							  <option value="150">200</option>
+							</select>
+						</span>
+					</li>
+					<li>
+						<span class="text_bloc"> Surface </span>
+						<span class="select_bloc">
+							<select >
+							  <option value="value1" selected>min</option> 
+							  <option value="value2">Valeur 2</option>
+							  <option value="value3">Valeur 3</option>
+							</select>
+							<span>à</span>
+							<select>
+							  <option value="value1" selected>max</option> 
+							  <option value="value2">Valeur 2</option>
+							  <option value="value3">Valeur 3</option>
+							</select>
+						</span>
+					</li>
+					<li>
+						<span class="text_bloc"> Invités </span>
+						<span class="select_bloc">
+							<select>
+							  <option value="value1" selected>max</option> 
+							  <option value="value2">Valeur 2</option>
+							  <option value="value3">Valeur 3</option>
+							</select>
+						</span>
+					</li>
+				</ul>
+				<ul class="bloc_checkbox">
+					<li><input type="checkbox" name="checkbox" value="checkbox">Wifi</li>
+					<li><input type="checkbox" name="checkbox" value="checkbox">Sono</li>
+					<li><input type="checkbox" name="checkbox" value="checkbox">Dancefloor</li>
+					<li><input type="checkbox" name="checkbox" value="checkbox">Bar</li>
+					<li><input type="checkbox" name="checkbox" value="checkbox">Cuisine</li>
 				</ul>
 			</div>
-		</div>
-		<div class="bloc_map">
-			<div id="parisMap">
+			<div class="bloc_arrondissement">
+				<div>
+					<div class="text_arrondissement">Arrondissements</div>
+					<ul>
+						<li>IIé</li>
+						<li>IIIé</li>
+						<li>IVé</li>
+					</ul>
+				</div>
 			</div>
-			<div>
-				<button>Tout Sélectionner</button>
-				<button>Tout Désélectionner</button>
+			<div class="bloc_map">
+				<div id="parisMap">
+				</div>
+				<div>
+					<button>Tout Sélectionner</button>
+					<button>Tout Désélectionner</button>
+				</div>
 			</div>
+			<input type="submit" value="Tester" />
 		</div>
-	</div>
+	</form>
+</div>
 
 	<?php 
 	if(isset($result)):
